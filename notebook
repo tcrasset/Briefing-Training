@@ -1,0 +1,87 @@
+{
+ "metadata": {
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": 3
+  },
+  "orig_nbformat": 2
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2,
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Project word embedding\n",
+    "\n",
+    "NLP is a very interesting field that is undergoing a fascinating transition, as computing power rises,\n",
+    "the language models begin to come close to human-like tasks.\n",
+    "The big names in the game, which you will probably have heard of are BERT, GPT-3, and so on.\n",
+    "If you haven't, I encourage you to go and look at the things they can  do: [BERT](https://blog.google/products/search/search-language-understanding-bert/), [GPT-3](https://kitze.io/posts/gpt3-is-the-beginning-of-the-end)\n",
+    "\n",
+    "If you follow the link to the video, you'll see how GPT-3 is used to create CSS code using only a single training example.\n",
+    "\n",
+    "[![Watch the video](https://img.youtube.com/vi/TjUvMQvrjrg/0.jpg)](https://youtu.be/TjUvMQvrjrg)\n",
+    "\n",
+    "Isn't that mindblowing ??\n",
+    "\n",
+    "Although you are not Google or openAI with their hugely expensive models, you can build simpler models that can do nice things too.\n",
+    "The first step to this is creating word embeddings.\n",
+    "As you've seen in the course notes, creating word embeddings is the starting point for any NLP models.\n",
+    "You'll master this concept in no time and you'll be able to do things like the tweet you see above. Yay!\n",
+    "\n",
+    "THe following assumes that you are familiar with how word embeddings work.\n",
+    "If not, you can always go back to [here](./project.md)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import nltk\n",
+    "import gensim\n",
+    "\n",
+    "# Download the corpora needed. They will get stored on your PC and automatically detected later.\n",
+    "nltk.download('abc')\n",
+    "nltk.download('punkt')\n",
+    "\n",
+    "# Loading the corpus we want to use\n",
+    "from nltk.corpus import abc\n",
+    "\n",
+    "# Create word embeddings using word2vec\n",
+    "model= gensim.models.Word2Vec(abc.sents())\n",
+    "\n",
+    "# Looking for words most similar to the word 'science'\n",
+    "data=model.wv.most_similar('science')\n",
+    "for word in data:\n",
+    "    print(word)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Now it's your turn!\n",
+    "The objective is to be familiar with using *word2vec* algorithm in the gensim library.\n",
+    "\n",
+    "Using another corpus than the one in the example, \n",
+    "we want you to list the 5 most similar and the 5 most dissimilar words.\n",
+    "\n",
+    "Some information to help you out : [Word2Vec documentation](https://radimrehurek.com/gensim/auto_examples/tutorials/run_word2vec.html#sphx-glr-auto-examples-tutorials-run-word2vec-py)\n",
+    "\n",
+    "\n"
+   ]
+  }
+ ]
+}

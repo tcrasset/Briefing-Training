@@ -12,4 +12,5 @@ model= gensim.models.Word2Vec(abc.sents())
 
 # Looking for words most similar to the word 'science'
 data=model.wv.most_similar('science')
-print(data)
+for word in data:
+    print(word)
