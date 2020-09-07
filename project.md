@@ -13,6 +13,6 @@ If you haven't, I encourage you to go and look at the things they can  do: [BERT
 Isn't that mindblowing ??
 
 Although you are not Google or openAI with their hugely expensive models, you can build simpler models that can do nice things too.
-THe first step to this is creating word embeddings.
+The first step to this is creating word embeddings.
 As you've seen in the course notes, creating word embeddings is the starting point for any NLP models.
 You'll master this concept in no time and you'll be able to do things like the tweet you see above. Yay!
